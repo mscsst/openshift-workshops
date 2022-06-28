@@ -6,7 +6,7 @@ var rest = require('restler');
 // CONSTANTS AND HELPERS
 //-----------------------------------------------------------------------------
 var API_KEY_PLACEHOLDER = process.env.WMATA_API_KEY || '2cc419c974f94b5486dd79d698f7d3f6';
-var BEERME = process.env.BEERME || true;
+var BEERME = process.env.BEERME || false;
 var RAINBOW = process.env.RAINBOW || false;
 console.log("using WMATA API Key - " + API_KEY_PLACEHOLDER);
 if (BEERME == 'true') { console.log("Beer Me! "); }
@@ -34,7 +34,7 @@ if (RAINBOW == 'true') { console.log("Rainbows! "); }
 function wmataJsonToGeoJson(jsonData) {
   var dataOut = { type: "FeatureCollection", features: [] };
   var markerSym = "bus";
-  var markerColor = "#ffffff";
+  var markerColor = "#ff0000";
   if (BEERME == 'true') { markerSym = "beer"; }
 
   if (jsonData.BusPositions) {
@@ -61,7 +61,7 @@ function wmataJsonToGeoJson(jsonData) {
 //-----------------------------------------------------------------------------
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('dcmetro', { title: 'D.C. Metro Stations', BEERME: BEERME });
+  res.render('dcmetro', { title: 'D.C. Metro Stations MSC', BEERME: BEERME });
 });
 
 //-----------------------------------------------------------------------------
