@@ -68,7 +68,7 @@ router.get('/', function(req, res, next) {
 /* GET busses - this is called by our dcmetro map index periodically */
 router.get('/busses.json', function(req, res, next) {
   // center on DC and 20 miles = ~32K meters
-  //var WMATA_URL='https://api.wmata.com/Bus.svc/json/jBusPositions?Lat=38.889931&Lon=-77.009003&Radius=32186.9';
+  // var WMATA_URL='https://api.wmata.com/Bus.svc/json/jBusPositions?Lat=38.889931&Lon=-77.009003&Radius=32186.9';
   var WMATA_URL='https://api.wmata.com/Bus.svc/json/jBusPositions';
   //var WMATA_URL='https://api.wmata.com/NextBusService.svc/json/jBusPositions';
   
